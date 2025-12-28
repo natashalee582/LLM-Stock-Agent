@@ -44,10 +44,3 @@ stateDiagram-v2
     GenerateResponse --> Idle: Reply to User
     ParseRequest --> GeneralChat: No Stock Mentioned
     GeneralChat --> Idle
-
----
-
-### Clone Repository
-
-```bash
-pip install -r requirements.txt
