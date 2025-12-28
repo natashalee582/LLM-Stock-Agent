@@ -1,4 +1,4 @@
-# 📈 LLM Stock Agent (Real-time Market Tracker)
+# LLM Stock Agent (Real-time Market Tracker)
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109-green)](https://fastapi.tiangolo.com/)
@@ -12,7 +12,7 @@
 
 ---
 
-## ✨ Features（功能特色）
+## Features（功能特色）
 
 - **Real-time Data Fetching**  
   使用 Finnhub 金融級 API，提供精確的即時股價、漲跌幅與幣別。
@@ -28,9 +28,9 @@
 
 ---
 
-## 🏗️ Architecture & FSM（系統架構與狀態機）
+## Architecture & FSM（系統架構與狀態機）
 
-本專案實作了典型的 **Agent 狀態機邏輯（Finite State Machine, FSM）**，符合 TOC 課程專題要求：
+本專案實作了典型的 **Agent 狀態機邏輯（Finite State Machine, FSM）**：
 
 ```mermaid
 stateDiagram-v2
