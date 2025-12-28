@@ -44,3 +44,40 @@ stateDiagram-v2
     GenerateResponse --> Idle: Reply to User
     ParseRequest --> GeneralChat: No Stock Mentioned
     GeneralChat --> Idle
+
+---
+
+## Workflow 說明
+
+1. **User Request**  
+   使用者詢問股價（例如：`How is Apple price?`）
+
+2. **LLM Decision**  
+   LLM 辨識使用者意圖，並將公司名稱轉換為股票代號  
+   （例如：Apple → `AAPL`）
+
+3. **Tool Execution**  
+   OpenWebUI 呼叫本地 FastAPI Server  
+
+4. **External API**  
+FastAPI 向 Finnhub API 取得即時股價資料。
+
+5. **Response**  
+LLM 將 JSON 結果整理成自然語言，回覆給使用者。
+
+---
+
+## Installation
+
+### Prerequisites（前置需求）
+
+- Python 3.9+
+- Finnhub API Key（Free Tier 即可）
+- Docker（用於 OpenWebUI）
+
+---
+
+### Clone Repository
+
+```bash
+pip install -r requirements.txt
