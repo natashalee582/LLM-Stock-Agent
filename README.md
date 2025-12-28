@@ -1,4 +1,4 @@
-# LLM Stock Agent 📈
+# LLM Stock Agent
 
 這是一個基於 OpenWebUI 與 FastAPI 的即時股價查詢 Agent。
 透過整合 Finnhub API，讓 LLM 能夠即時獲取台美股（如 AAPL, 2330.TW）的最新價格資訊。
