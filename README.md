@@ -19,9 +19,7 @@
     * LLM 會自動閱讀最新財經新聞，分析並判斷市場情緒為 **Bullish (利多)** 或 **Bearish (利空)**。
 3.  **Multi-Stock Comparison**: 
     * 支援一次比較多檔股票（例如："Compare NVDA and AMD"），自動生成比較表格。
-4.  **K-Line Chart Integration**: 
-    * 自動生成 **TradingView K 線圖**連結，點擊即可查看專業技術線圖。
-5.  **Smart Fallback Mechanism**: 
+4.  **Smart Fallback Mechanism**: 
     * 內建 Mock 救援機制，當 API 額度耗盡或查詢非美股數據不穩時，自動切換至模擬模式，確保 Demo 流程 100% 穩定。
 
 ---
