@@ -1,4 +1,4 @@
-# LLM Stock Agent (Real-time Market Tracker)
+# 📈 LLM Stock Agent (Real-time Market Tracker)
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109-green)](https://fastapi.tiangolo.com/)
@@ -11,7 +11,7 @@
 
 ---
 
-## Key Features (功能亮點)
+## ✨ Key Features (功能亮點)
 
 1.  **Real-time Data & News**: 
     * 串接 Finnhub 金融級 API，提供即時股價 (Price) 與即時新聞 (News)。
@@ -26,19 +26,24 @@
 
 ---
 
-## Architecture & FSM（系統架構與狀態機）
+## 🏗️ Architecture (系統架構)
 
-本專案實作了典型的 **Agent 狀態機邏輯（Finite State Machine, FSM）**：
+本專案實作了具備 **Complex Task Decomposition** 能力的 Agent：
 
 ```mermaid
 stateDiagram-v2
     [*] --> Idle
     Idle --> ParseRequest: User Input
-    ParseRequest --> IdentifyTicker: Mention Stock?
-    IdentifyTicker --> CallTool: Found Ticker (e.g., AAPL)
-    CallTool --> FetchAPI: GET /tool/stock_price
-    FetchAPI --> CallTool: JSON Data (Finnhub)
-    CallTool --> GenerateResponse: Pass Data to LLM
-    GenerateResponse --> Idle: Reply to User
-    ParseRequest --> GeneralChat: No Stock Mentioned
-    GeneralChat --> Idle
+    ParseRequest --> IdentifyIntent: Stock Analysis?
+    IdentifyIntent --> SingleStock: "Check Apple"
+    IdentifyIntent --> MultiStock: "Compare NVDA & AMD"
+    
+    SingleStock --> CallTool: GET /tool/stock_price (ticker='AAPL')
+    MultiStock --> CallTool: GET /tool/stock_price (ticker='NVDA,AMD')
+    
+    CallTool --> FetchAPI: Finnhub API / TradingView Link
+    FetchAPI --> CallTool: JSON Data (Price + News + Chart)
+    
+    CallTool --> Analysis: LLM Analyzes Sentiment
+    Analysis --> GenerateTable: Create Markdown Table
+    GenerateTable --> Idle: Response with Chart Link
