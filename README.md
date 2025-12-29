@@ -38,18 +38,18 @@
    ```
 
 3. Install dependencies
-   ˋˋˋbash
+   ```bash
    pip install -r requirements.txt
    ```
 
 5. Configure API Key
    Open stock_server.py and replace the placeholder with your Finnhub API Key.           (Security Note: For production, use environment variables.)
-   ˋˋˋbash
+   ```bash
    FINNHUB_API_KEY = "YOUR_FINNHUB_API_KEY_HERE"
    ```
 
 7. Start the Tool Server
-   ˋˋˋbash
+   ```bash
    python stock_server.py
    ```
    Server will start at http://0.0.0.0:8787
@@ -97,7 +97,7 @@
    
    **Response Format:**
    
-   ### 📊 Stock Analysis
+   ### Stock Analysis
    (If multiple stocks, use a comparison table. If single, use a standard table.)
    
    | Feature | {Stock A} | ... |
@@ -105,10 +105,6 @@
    | **Price** | **{price}** | ... |
    | Change | {change} 📈 | ... |
    | Sentiment | 🟢 Bullish | ... |
-   
-   **K-Line Chart (Technical View):**
-   * 🔗 **{Stock A}**: [Click to View Live Chart]({chart_link})
-   * 🔗 **{Stock B}**: [Click to View Live Chart]({chart_link})
    
    **Analysis:**
    * Briefly summarize the news and your verdict.
