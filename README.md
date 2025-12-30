@@ -146,4 +146,4 @@ stateDiagram-v2
     
     CallTool --> Analysis: LLM Analyzes Sentiment
     Analysis --> GenerateTable: Create Markdown Table
-    GenerateTable --> Idle: Response with Chart Link
+    GenerateTable --> Idle: Response
